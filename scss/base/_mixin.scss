@@ -1,0 +1,27 @@
+@mixin hover($backgroundColor, $color, $fontsize) {
+  background-color: $backgroundColor;
+  color: $color;
+  font-size: $fontsize;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+@mixin text($color, $textTransform, $fontWeight) {
+  color: $color;
+  text-transform: $textTransform;
+  font-weight: $fontWeight;
+}
+
+@mixin input($padding, $borderRadius, $borderColor) {
+  outline: none;
+  padding: $padding;
+  border-radius: $borderRadius;
+  -webkit-border-radius: $borderRadius;
+  -moz-border-radius: $borderRadius;
+  -ms-border-radius: $borderRadius;
+  -o-border-radius: $borderRadius;
+  border: 1px solid $borderColor;
+}

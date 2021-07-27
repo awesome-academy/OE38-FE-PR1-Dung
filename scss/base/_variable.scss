@@ -1,5 +1,13 @@
-:root{
-    --gray: #F7F7F7;
-    --gray-dark: #e1e1e1;
-    --yellow: #F5BD3C;
-}
+$gray: #f7f7f7;
+$gray-dark: #e1e1e1;
+$yellow: #f5bd3c;
+$black: #1f1f1f;
+$white: #fff;
+$gray-border: rgba(255, 255, 255, 0.1);
+
+$font: "Roboto", sans-serif;
+
+$breakpoints-small: 576px;
+$breakpoints-medium: 768px;
+$breakpoints-large: 992px;
+$breakpoints-extra-large: 1200px;

@@ -1,0 +1,57 @@
+include ../data/header-data.pug
+header
+    .container
+        .header-top-wrapper
+                .header-top.d-flex.justify-content-between
+                    .social 
+                        ul.social-list.nav
+                            each item, index in social
+                                li(class=`social__item d-flex align-items-center justify-content-center ${index==0 ?"active" : ""}`)
+                                    a(href=item.href)
+                                        i(class=`${item.icon}`)
+                    .login
+                        ul.login-list.nav.flex-nowrap
+                            li.login__item.d-flex.align-items-center.flex-nowrap
+                                a(href="#") Đăng ký 
+                            li.login__item.d-flex.align-items-center.flex-nowrap
+                                a(href="#") Đăng nhập 
+        .header-logo
+            .row 
+                .col-xl-3.col-sm-6.logo 
+                    img(src="./assets/images/Logo.png", alt="Logo")
+                .col-xl-3.align-self-center.mt-4.hidden-item
+                    .contact 
+                        p Hotline :
+                        p (04) 9500 9650 - (04) 9500 8850
+                .col-xl-3.align-self-center.mt-4.hidden-item
+                    .contact 
+                        p Đặt hàng nhanh
+                        p (04) 9500 9650 - (04) 9500 8850
+                .col-xl-3.col-sm-6.align-self-center
+                    .search
+                        input(type="text" placeholder="Tìm kiếm . . .")
+                        i.fas.fa-search
+    .header-nav
+        .container
+            .row.flex-nowrap.justify-content-between
+                .col-xl-10.col-12
+                    nav.navbar.navbar-expand-lg.navbar-dark
+                        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                            span.navbar-toggler-icon
+                        #navbarSupportedContent.collapse.navbar-collapse.font-weight-bold
+                            ul.navbar-nav
+                                each item,index in menu 
+                                    if(!item.submenu)
+                                        li(class=`nav-item ${index==0 ?"active" : ""}`)
+                                            a.nav-link(href=item.href)=item.name 
+                                                span.sr-only (current)
+                                    else 
+                                        li.nav-item.dropdown
+                                            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')=item.name
+                                            .dropdown-menu(aria-labelledby='navbarDropdown')
+                                                each submenu in item.submenu
+                                                    a.dropdown-item(href=submenu.href)=submenu.subname
+                .col-xl-2
+                    .cart.d-flex.justify-content-end
+                        a(href="#" class="cart-icon") 
+                            i.fas.fa-shopping-basket
