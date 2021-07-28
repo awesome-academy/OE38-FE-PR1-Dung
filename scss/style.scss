@@ -5,4 +5,5 @@
 @import "./base/mixin";
 
 // import layouts
-@import "../layouts/header"
+@import "./layouts/_header";
+@import "./layouts/_footer"

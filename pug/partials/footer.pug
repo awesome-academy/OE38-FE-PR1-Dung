@@ -1,0 +1,73 @@
+include ../data/footer-data.pug
+include ../data/header-data.pug
+footer 
+    .container
+        nav.footer-top.mb-3
+            ul.footer-top__list.d-flex.pl-0.justify-content-between
+                li.footer-top__item.p-0.about-us.col-lg-3
+                    h6.footer__title.text-uppercase Về chúng tôi
+                    p.desc Công ty Cổ phần Công nghệ DKT đã và đang khẳng định được vị trí hàng đầu trong lĩnh vực Thương mại điện tử
+                    p.detail 
+                        i.fas.fa-map-marker-alt
+                        | Tầng 4 - Tòa nhà Hanoi Group 442 Đội Cấn Ba Đình - Hà Nội
+                    p.detail 
+                        i.fas.fa-envelope
+                        | support@dkt.com.vn
+                    p.detail 
+                        i.fas.fa-mobile-alt
+                        | (84-4) 66558868  -  (84-4) 37868904
+                each item in footerData 
+                    li.footer-top__item.footer-link
+                        h6.footer__title.text-uppercase=item.title
+                        each i in item.list
+                            p 
+                                a(href="#")=i 
+                li.footer-top__item.footer-link
+                    h6.footer__title.text-uppercase Hỗ trợ
+                    each item in socials
+                        p 
+                            a(href="#")
+                                i(class=`${item.icon}`)
+                                span=item.name
+        section.footer-payment-support.d-flex.pt-5
+            .payment.col-xl-6.pl-0.mb-3
+                h6 Thanh toán
+                .logos.mt-4
+                    - for(var i = 0; i < 8; i++)
+                        .logo-bank
+                            img(src=`${banks[i]}`, alt="Logo")
+
+            .support.col-xl-6.pl-0
+                h6 Giải đáp nhanh
+                .row.mt-4
+                    .col-xl-6.support__item.d-flex.mb-4
+                        .support__icon.mr-2
+                            i.fa.fa-phone
+                        .support__content.align-items-center
+                            span.title Tư vấn miễn phí(24/7)
+                            br
+                            span.phone 1900 650 650
+                    .col-xl-6.support__item.d-flex 
+                        .support__icon.mr-2
+                            i.fab.fa-weixin
+                        .support__content.align-items-center
+                            span.title Góp ý - Phản hồi - Thắc mắc
+                            br
+                            span.phone 1900 650 650
+                    
+    section.footer-bottom.mt-4
+        .container 
+            .footer-bottom-wrapper 
+                .row 
+                    .copyright.col-lg-6
+                        p
+                            | Bản quyền thuộc về 
+                            b  Design Team, 
+                            |  Phát triển 
+                            b  Bizweb
+                    .footer-nav.col-lg-6.pl-0
+                        nav
+                            ul.nav 
+                                each item in menu
+                                    li.nav-item
+                                        a.nav-link.active(href='#')=item.name
