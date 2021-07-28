@@ -9,10 +9,11 @@
   -o-transition: all 0.2s ease-in-out;
 }
 
-@mixin text($color, $textTransform, $fontWeight) {
+@mixin text($color, $textTransform, $fontWeight, $fontSize) {
   color: $color;
   text-transform: $textTransform;
   font-weight: $fontWeight;
+  font-size: $fontSize;
 }
 
 @mixin input($padding, $borderRadius, $borderColor) {
@@ -24,4 +25,37 @@
   -ms-border-radius: $borderRadius;
   -o-border-radius: $borderRadius;
   border: 1px solid $borderColor;
+}
+
+@mixin before($width, $height, $display) {
+  content: "";
+  width: $width;
+  height: $height;
+  display: $display;
+}
+
+@mixin grid($colSize, $rowSize) {
+  display: grid;
+  grid-template-columns: repeat($colSize, 1fr);
+  grid-template-rows: repeat($rowSize, 1fr);
+}
+
+@mixin responsive($canvas) {
+  @if $canvas == breakpoints-small {
+    @media only screen and (max-width: $breakpoints-small) {
+      @content;
+    }
+  } @else if $canvas == breakpoints-medium {
+    @media only screen and (max-width: $breakpoints-medium) {
+      @content;
+    }
+  } @else if $canvas == breakpoints-large {
+    @media only screen and (max-width: $breakpoints-large) {
+      @content;
+    }
+  } @else if $canvas == breakpoints-extra-large {
+    @media only screen and (max-width: $breakpoints-extra-large) {
+      @content;
+    }
+  }
 }

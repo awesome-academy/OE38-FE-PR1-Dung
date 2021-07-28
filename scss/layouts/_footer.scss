@@ -1,0 +1,129 @@
+@import "../base/variable";
+
+footer {
+  padding-top: 60px;
+  .footer-top {
+    &__list {
+      .footer-top__item {
+        .footer__title {
+          margin-bottom: 40px;
+          &::before {
+            @include before(10px, 10px, inline-block);
+            margin-right: 10px;
+            background-image: url("../assets/images/icon-title.png");
+          }
+        }
+
+        p,
+        a,
+        span {
+          @include text($gray-text, none, 400, 0.8rem);
+        }
+
+        i {
+          margin-right: 1rem;
+        }
+      }
+    }
+    @include responsive(breakpoints-large) {
+      .footer-top__list {
+        flex-direction: column;
+        .footer-top__item {
+          margin-top: 40px;
+          .footer__title {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-payment-support {
+    border-top: 1px solid $gray-dark;
+
+    .payment {
+      .logos {
+        @include grid(4, 2);
+        gap: 10px 15px;
+      }
+
+      .logo-bank {
+        padding: 0;
+      }
+      @include responsive (breakpoints-extra-large) {
+        .logos {
+          @include grid(2, 4);
+        }
+      }
+    }
+    .support {
+      line-height: 30px;
+      &__item {
+        cursor: pointer;
+        .support__icon {
+          @include input(0, 50%, $yellow);
+          display: inline-block;
+          width: 60px;
+          height: 60px;
+          border-width: 2px;
+          position: relative;
+          i {
+            color: $yellow;
+            position: absolute;
+            top: 28%;
+            left: 28%;
+            font-size: 1.5rem;
+          }
+        }
+        .support__content {
+          .title {
+            @include text($black, none, 400, 0.9rem);
+          }
+          .phone {
+            @include text(red, none, 700, 1.2rem);
+          }
+        }
+      }
+    }
+  }
+  @include responsive (breakpoints-large) {
+    .footer-payment-support {
+      flex-direction: column;
+    }
+  }
+
+  .footer-bottom {
+    background-color: $black;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    .copyright {
+      @include text($white, none, 400, 0.9rem);
+      p {
+        @include text($gray-text, none, 400, 0.9rem);
+        b {
+          color: $white;
+        }
+      }
+    }
+    .footer-nav {
+      .nav {
+        &-link {
+          padding: 0 0.5rem;
+        }
+        &-item {
+          a {
+            @include text($gray-text, none, 400, 0.9rem);
+          }
+        }
+      }
+    }
+    @include responsive (breakpoints-medium) {
+      .copyright {
+        text-align: center;
+      }
+      .nav {
+        justify-content: center;
+      }
+    }
+  }
+}

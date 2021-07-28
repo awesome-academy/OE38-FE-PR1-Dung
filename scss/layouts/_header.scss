@@ -31,7 +31,7 @@ header {
         }
       }
       .login {
-        .login-list {
+        &-list {
           .login__item {
             height: 50px;
             border-left: 1px solid $gray-dark;
@@ -40,7 +40,7 @@ header {
               border-right: 1px solid $gray-dark;
             }
             a {
-              @include text($black, uppercase, 500);
+              @include text($black, uppercase, 500, 1rem);
             }
             &:hover {
               @include hover($yellow, $white, 1rem);
@@ -52,7 +52,7 @@ header {
         }
       }
     }
-    @media screen and (max-width: $breakpoints-small) {
+    @include responsive(breakpoints-small) {
       .social {
         display: none;
       }
@@ -72,7 +72,7 @@ header {
         }
       }
     }
-  } 
+  }
 
   .header-logo {
     padding: 10px 0;
@@ -82,7 +82,7 @@ header {
       p {
         font-size: 0.8rem;
         &:first-child {
-          @include text($yellow, uppercase, 700);
+          @include text($yellow, uppercase, 700, 1rem);
           margin-bottom: 0;
           font-size: 0.9rem;
         }
@@ -102,7 +102,7 @@ header {
         cursor: pointer;
       }
     }
-    @media screen and (max-width: $breakpoints-extra-large) {
+    @include responsive(breakpoints-extra-large) {
       .hidden-item {
         display: none;
       }
@@ -111,7 +111,7 @@ header {
         margin-right: 0;
       }
     }
-    @media screen and (max-width: $breakpoints-small) {
+    @include responsive(breakpoints-small) {
       .header-logo {
         height: 240px;
       }
@@ -128,7 +128,7 @@ header {
       }
     }
   }
-  
+
   .header-nav {
     min-height: 70px;
     background-color: $black;
@@ -142,7 +142,7 @@ header {
             border-right: 1px solid $gray-border;
           }
           .nav-link {
-            @include text($white, uppercase, 900);
+            @include text($white, uppercase, 900, 1rem);
           }
           &:hover {
             @include hover($yellow, $white, 1rem);
@@ -178,7 +178,7 @@ header {
         @include hover($yellow, $white, 1rem);
       }
     }
-    @media screen and (max-width: $breakpoints-large) {
+    @include responsive(breakpoints-large) {
       .navbar {
         width: 100%;
       }
@@ -191,7 +191,7 @@ header {
       }
     }
   }
-  @media screen and (max-width: $breakpoints-small) {
+  @include responsive(breakpoints-small) {
     .container {
       width: 100%;
       padding: 0;
