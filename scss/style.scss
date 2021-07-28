@@ -6,4 +6,9 @@
 
 // import layouts
 @import "./layouts/_header";
-@import "./layouts/_footer"
+@import "./layouts/_footer";
+
+//import components
+@import "./components/banner.scss";
+@import "./components/button.scss";
+@import "./components/card.scss";
