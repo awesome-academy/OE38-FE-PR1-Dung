@@ -1,0 +1,15 @@
+@mixin button($backgroundColor, $color){
+    background-color: $backgroundColor;
+    color: $color;
+}
+
+.btn-yellow{
+    @include button($yellow, $white);
+    @include text($white, uppercase, 600, 1rem);
+    padding: .5rem 1rem;
+
+    &:hover{
+        @include button($black, $white);
+        @include text($white, uppercase, 600, 1rem);
+    }
+}

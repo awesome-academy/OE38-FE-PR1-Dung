@@ -1,0 +1,19 @@
+mixin banner(banner)
+    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+            each item, index in banner
+                li(class=`${index == 0 ? "active" : ""}` data-target='#carouselExampleIndicators' data-slide-to=`${index}`)
+        .carousel-inner
+            each item, index in banner
+                div(class=`carousel-item ${index == 0 ? "active" : ""}`)
+                    .banner-detail
+                        h1=item.name
+                        h1.title=item.title
+                        ul.list-detail.mb-4
+                            each i in item.detail
+                                li.list-detail__item.mt-2
+                                    i.far.fa-check-circle.mr-2
+                                    span=i
+                        +button("Mua ngay", "yellow")
+                    img.d-block.w-100(src=item.image alt='First slide')
+

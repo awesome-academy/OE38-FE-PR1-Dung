@@ -1,0 +1,8 @@
+mixin card(card)
+    .card
+        .card-body.d-flex.align-items-center
+            .card-icon.mr-3
+                i(class=`${card.icon}`)
+            .card-content
+                h5.card-title=card.title
+                p.card-text=card.detail

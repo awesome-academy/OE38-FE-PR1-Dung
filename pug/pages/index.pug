@@ -1,1 +1,20 @@
 extend ../base/base
+prepend title
+  - var title = "Trang chủ"
+
+block main
+    include ../components/banner
+    include ../components/button
+    include ../components/card
+    include ../data/banner-data
+
+    main 
+        .container.mt-4
+            section.banner 
+                .row 
+                    .col-lg-8.p-0
+                        +banner(banner)
+                    .col-lg-4.p-0
+                        each card in cards 
+                            +card(card)
+
