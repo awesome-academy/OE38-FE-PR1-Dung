@@ -1,0 +1,65 @@
+.product-list {
+    &__item {
+        border: 1px solid $gray-dark;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+
+        .product {
+            padding: 1rem;
+            background-color: $white;
+
+            .card-img {
+                text-align: center;
+
+                img {
+                    width: 70%;
+                }
+            }
+
+            .product-body {
+                padding: 1rem 0;
+
+                .card-price {
+                    @include text($red, none, 600, 1.2rem);
+                }
+
+                .card-title {
+                    @include text($black, uppercase, 600, 1rem);
+                }
+
+                .product-rates {
+                    i {
+                        @include text($yellow, none, none, 1rem);
+                    }
+
+                    .reviews {
+                        @include text($gray-text, none, none, 0.8rem);
+                        font-style: italic;
+                    }
+                }
+
+                .action {
+                    display: none !important;
+
+                    a+a {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: transparent;
+
+                .action {
+                    display: flex !important;
+                }
+            }
+        }
+    }
+}
+
+@include responsive(breakpoints-medium) {
+    .product-list {
+        padding-left: 0 !important;
+    }
+}

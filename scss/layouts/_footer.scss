@@ -25,11 +25,13 @@ footer {
         }
       }
     }
-    @include responsive(breakpoints-large) {
+    @include responsive(breakpoints-extra-large) {
       .footer-top__list {
         flex-direction: column;
+
         .footer-top__item {
           margin-top: 40px;
+
           .footer__title {
             margin-bottom: 30px;
           }
@@ -67,6 +69,7 @@ footer {
           height: 60px;
           border-width: 2px;
           position: relative;
+
           i {
             color: $yellow;
             position: absolute;
@@ -79,6 +82,7 @@ footer {
           .title {
             @include text($black, none, 400, 0.9rem);
           }
+
           .phone {
             @include text(red, none, 700, 1.2rem);
           }
@@ -96,8 +100,10 @@ footer {
     background-color: $black;
     padding-top: 2rem;
     padding-bottom: 1rem;
+    
     .copyright {
       @include text($white, none, 400, 0.9rem);
+
       p {
         @include text($gray-text, none, 400, 0.9rem);
         b {
@@ -110,6 +116,7 @@ footer {
         &-link {
           padding: 0 0.5rem;
         }
+
         &-item {
           a {
             @include text($gray-text, none, 400, 0.9rem);
@@ -121,6 +128,7 @@ footer {
       .copyright {
         text-align: center;
       }
+
       .nav {
         justify-content: center;
       }

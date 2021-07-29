@@ -1,0 +1,14 @@
+include ../data/product-data
+
+nav.navbar.navbar-expand-lg.navbar-light.flex-column.p-0.align-items-start.vertical-nav
+    li.navbar-brand.nav-item.w-100(href='#')
+        a.nav-link.p-0(href="#")=categories[0]
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
+        i.fas.fa-chevron-down
+    #navbarNavDropdown.collapse.navbar-collapse.w-100
+        ul.navbar-nav.flex-column.w-100
+            - for(var i = 1; i < categories.length; i++) 
+                    li(class=`nav-item ${index==0 ?"active" : ""}`)
+                        a.nav-link.p-0(href="#")=categories[i]
+        
+      

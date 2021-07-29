@@ -5,11 +5,43 @@
 
 .btn-yellow{
     @include button($yellow, $white);
-    @include text($white, uppercase, 600, 1rem);
+    @include text($white, uppercase, 500, .9rem);
     padding: .5rem 1rem;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
 
     &:hover{
-        @include button($black, $white);
-        @include text($white, uppercase, 600, 1rem);
+        @include button($white, $black);
+    }
+}
+
+.btn-black{
+    @include button($black, $white);
+    @include text($white, uppercase, 500, .9rem);
+    padding: .5rem 1rem;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    &:hover{
+        @include button($white, $black);
+    }
+}
+
+.btn-white{
+    @include button($white, $black);
+    @include text($black, uppercase, 500, .9rem);
+    padding: .5rem 1rem;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    &:hover{
+        @include button($yellow, $black);
     }
 }
