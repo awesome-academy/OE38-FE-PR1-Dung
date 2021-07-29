@@ -1,0 +1,54 @@
+.categories-title {
+  @include text($black, uppercase, 500, 1.3rem);
+
+  &:before {
+    @include before(15px, 15px, inline-block);
+    background: url("../assets/images/icon-title.png") center;
+    margin-right: 1rem;
+  }
+}
+
+.categories-products {
+  .nav-pills {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+
+    .nav-link {
+      border: 0.5px solid $black;
+      outline: none;
+      padding: 0;
+      background-color: transparent;
+    }
+    .nav-item + .nav-item {
+      margin-left: 1rem;
+    }
+
+    .active {
+      background-color: $yellow;
+
+      button {
+        @include button($yellow, $white);
+        @include text($white, uppercase, 500, 0.9rem);
+        padding: 0.5rem 1rem;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+
+        &:hover {
+          @include button($white, $black);
+        }
+      }
+    }
+  }
+
+  @include responsive(breakpoints-medium) {
+    .nav-pills {
+      display: none;
+    }
+  }
+}

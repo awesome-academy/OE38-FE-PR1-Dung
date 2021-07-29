@@ -16,7 +16,7 @@ header
                             li.login__item.d-flex.align-items-center.flex-nowrap
                                 a(href="#") Đăng nhập 
         .header-logo
-            .row 
+            .row.mr-0
                 .col-xl-3.col-sm-6.logo 
                     img(src="./assets/images/Logo.png", alt="Logo")
                 .col-xl-3.align-self-center.mt-4.hidden-item
@@ -31,10 +31,10 @@ header
                     .search
                         input(type="text" placeholder="Tìm kiếm . . .")
                         i.fas.fa-search
-    .header-nav
+    .header-nav.w-100
         .container
-            .row.flex-nowrap.justify-content-between
-                .col-xl-10.col-12
+            .row.flex-nowrap.justify-content-between.mr-0
+                .col-lg-10.col-12
                     nav.navbar.navbar-expand-lg.navbar-dark
                         button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                             span.navbar-toggler-icon
@@ -51,7 +51,7 @@ header
                                             .dropdown-menu(aria-labelledby='navbarDropdown')
                                                 each submenu in item.submenu
                                                     a.dropdown-item(href=submenu.href)=submenu.subname
-                .col-xl-2
+                .col-lg-2.p-0
                     .cart.d-flex.justify-content-end
                         a(href="#" class="cart-icon") 
                             i.fas.fa-shopping-basket

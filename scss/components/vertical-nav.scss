@@ -1,0 +1,73 @@
+.vertical-nav{
+    .navbar-brand{
+        @include hover($black, $yellow, none);
+        height: 60px;
+        border: 1px solid $gray-dark;
+        padding: 1rem .5rem;
+        padding-right: 2.4rem;
+        
+        a{
+            @include text($yellow, none, 400, .9rem);
+
+            &:before{
+                @include before(10px, 10px, inline-block);
+                background-image: url(../assets/images/icon-title.png);
+                margin-right: 1rem;
+            }
+        }
+
+    }
+    .navbar-nav{
+        .nav-item{
+            border: 1px solid $gray-dark;
+            padding: 1rem .5rem;
+            height: 60px;
+
+            a{
+                @include text($gray-text, none, 400, .9rem);
+                &:before{
+                    @include before(10px, 10px, inline-block);
+                    background-image: url(../assets/images/icon-title-gray.png);
+                    margin-right: 1rem;
+                }
+            }
+
+            &:hover{
+                @include hover($black, $yellow, none);
+
+                a{
+                    color: $yellow;
+                    &::before{
+                        background-image: url(../assets/images/icon-title.png);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive(breakpoints-large){
+    .vertical-nav{
+        position: relative;
+
+        button{
+            position: absolute;
+            top: .8rem;
+            right: 1rem;
+            border: none;
+            outline: none;
+
+            i{
+                color: $yellow;
+                cursor: pointer;
+            }
+        }
+        .navbar-brand{
+            width: 100%;
+        }
+    
+        .navbar-collapse{
+            width: 100%;
+        }
+    }
+}

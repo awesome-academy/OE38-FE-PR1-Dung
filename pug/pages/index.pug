@@ -6,15 +6,37 @@ block main
     include ../components/banner
     include ../components/button
     include ../components/card
+    include ../components/product
     include ../data/banner-data
-
+    include ../data/product-data
     main 
         .container.mt-4
             section.banner 
-                .row 
+                .row.m-0
                     .col-lg-8.p-0
                         +banner(banner)
-                    .col-lg-4.p-0
+                    .col-lg-4.p-0.card-banner
                         each card in cards 
                             +card(card)
+            section.products.mt-4
+                h2.categories-title.ml-0 Sản phẩm nổi bật
+                .row.m-0
+                    .col-lg-3.col-12.p-0.mb-4
+                        include ../partials/vertical-nav
+                    .col-lg-9.col-12.p-0
+                        +products(products, 6)
+            section.products.mt-4
+                h2.categories-title.ml-0 Sản phẩm mới
+                .categories-products
+                    +category(products, 3)
+            section.image-banner.mt-4
+                .row 
+                    .col-lg-6 
+                        .image
+                            img.w-100.mb-2(src='../assets/images/banner1.jpg', alt="Anh banner")
+                    .col-lg-6 
+                        .image
+                            img.w-100(src='../assets/images/banner2.jpg', alt="Anh banner")
+                
+
 
