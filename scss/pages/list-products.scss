@@ -1,0 +1,101 @@
+.lists-products {
+  .lists-products-grid {
+    .nav-pills {
+      .nav-link {
+        background-color: transparent;
+        padding: 0;
+
+        button {
+          display: flex;
+          justify-content: center;
+          border-color: $gray-dark;
+        }
+      }
+
+      .active {
+        i {
+          color: $yellow;
+        }
+      }
+    }
+    
+    .nav-item + .nav-item {
+      margin-left: 1rem;
+    }
+  }
+
+  .sort-and-show {
+    position: absolute;
+    left: 1.5rem;
+
+    label {
+      @include text($gray-text, none, 400, 1rem);
+    }
+
+    input {
+      @include input(0.4rem, none, $gray-text);
+      outline: none;
+      width: 10rem;
+    }
+
+    select {
+      @include input(0.4rem, none, $gray-text);
+      outline: none;
+      background-color: transparent;
+    }
+
+    @include responsive(breakpoints-medium) {
+      .sort-and-show {
+        display: none !important;
+      }
+    }
+  }
+
+
+.promotion-nav {
+    border: 1px solid $gray;
+
+    .navbar-brand {
+      background-color: $black;
+      padding: 1rem 0.5rem;
+
+      a {
+        @include text($yellow, uppercase, 400, 1rem);
+
+        &:before {
+          @include before(10px, 10px, inline-block);
+          background-image: url(../assets/images/icon-title.png);
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .product-medium {
+      border-radius: 0 !important;
+      -webkit-border-radius: 0 !important;
+      -moz-border-radius: 0 !important;
+      -ms-border-radius: 0 !important;
+      -o-border-radius: 0 !important;
+    }
+
+    .product-body {
+      padding: 1rem 0;
+      cursor: pointer;
+
+      .card-price {
+        @include text($red, none, 600, 1rem);
+      }
+
+      .card-title {
+        @include text($black, uppercase, 600, 0.8rem);
+      }
+    }
+
+    @include responsive(breakpoints-large) {
+      .promotion-nav {
+        display: none !important;
+      }
+    }
+  }
+}
+
