@@ -1,2 +1,18 @@
 mixin button(content, color)
     button(class=`btn btn-${color}` type='button')=content
+
+mixin buttonSquare(color, backdroundColor)
+    button(class=`btn btn-square-${color}`)
+        i.fa.fa-caret-left
+
+mixin buttonSquareRight(color, backdroundColor)
+    button(class=`btn btn-square-${color}`)
+        i.fa.fa-caret-right
+
+mixin buttonList(color)
+    button(class=`btn btn-square-${color}`)
+        i.fa.fa-bars
+
+mixin buttonGrid(color)
+    button(class=`btn btn-square-${color}`)
+        i.fa.fa-th

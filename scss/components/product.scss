@@ -56,10 +56,50 @@
             }
         }
     }
-}
 
-@include responsive(breakpoints-medium) {
-    .product-list {
-        padding-left: 0 !important;
+    .product-medium{
+        .product-body{
+            .action{
+                display: block !important;
+            }
+        }
     }
 }
+
+@include responsive(breakpoints-large) {
+    .product-list {
+        padding-left: 0 !important;
+
+        .product-col:nth-child(odd){
+            padding-left: 0;
+        }
+    }
+
+    .product-medium-list{
+        .product-col{
+            padding-left: 0 !important;
+        }
+    }
+}
+
+@include responsive(breakpoints-small) {
+    .product-list {
+        padding-left: 0 !important;
+
+        .product-col{
+            padding-left: 0;
+        }
+    }
+}
+
+.product-large{
+    padding: 5.6rem 4rem !important;
+    border: none;
+    margin-top: 2rem;
+
+    .product-body{
+        margin-top: 5rem;
+    }
+}
+
+

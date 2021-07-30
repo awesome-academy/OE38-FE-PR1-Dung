@@ -17,3 +17,16 @@ mixin banner(banner)
                         +button("Mua ngay", "yellow")
                     img.d-block.w-100(src=item.image alt='First slide')
 
+mixin brand(brandList, sizeItem)
+    #carouselExampleSlidesOnly.carousel.slide.banner.brand-image(data-ride='carousel')
+        .carousel-inner.w-100
+            - for(var i = 0; i < brandList.length; i+=sizeItem)
+                - var carousel = brandList.slice(i, i+sizeItem)
+                    div(class=`carousel-item h-100 ${i==0 ? "active" : ""}`)
+                        .row.flex-nowrap.justify-content-around.logo
+                            each item, index in carousel 
+                                li.brand-item
+                                    img(src=item, alt="") 
+
+
+
