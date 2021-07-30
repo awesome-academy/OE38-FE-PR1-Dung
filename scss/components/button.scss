@@ -27,6 +27,7 @@
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
+
     &:hover{
         @include button($white, $black);
     }
@@ -41,7 +42,40 @@
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
+
     &:hover{
         @include button($yellow, $black);
+    }
+}
+
+.btn-square-black{
+    @include button($black, $white);
+    border-radius: 0;
+    border: 1px solid $black;
+    width: 2rem;
+    height: 2rem;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+
+    &:hover{
+        @include button($white, $black);
+    }
+}
+
+.btn-square-white{
+    @include button($white, $black);
+    border: 1px solid $black;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+
+    &:hover{
+        @include button($black, $white);
     }
 }

@@ -1,6 +1,30 @@
 mixin product(product)
-    .card.product.w-100(style='width: 18rem;')
+    .card.product.w-100
         .card-img
+            img.card-img-top(src=product.image alt='Card image cap')
+        .product-body
+            h5.card-price=product.price 
+                |  đ
+            h5.card-title=product.title
+            +rating(product)
+            .action.d-flex.justify-content-center
+                a(href='#')
+                    +button("Mua ngay", "yellow")
+                a(href='#') 
+                    +button("Mua ngay", "black")
+
+mixin rating(product)
+    .product-rates.mb-4
+        span 
+            - for(var i = 0; i < product.rate; i++)
+                i.fas.fa-star
+            - for(var i = 0; i < 5 - product.rate; i++)
+                i.far.fa-star.none-star
+        span.reviews  (#{product.reviews} Đánh giá)
+
+mixin product-large(product)
+    .card.product.product-large.w-100(style='width: 18rem;')
+        .card-img.pt-6
             img.card-img-top(src=product.image alt='Card image cap')
         .product-body
             h5.card-price=product.price 
@@ -16,7 +40,7 @@ mixin product(product)
             .action.d-flex.justify-content-center
                 a(href='#')
                     +button("Mua ngay", "yellow")
-                a(href='#')
+                a(href='#') 
                     +button("Mua ngay", "black")
 
 mixin products (products, size)
@@ -25,7 +49,22 @@ mixin products (products, size)
             .col-lg-4.col-sm-6.pr-0.product-col
                 li.product-list__item.mb-4
                     +product(products[i])
-                    
+
+mixin productsLarge (products)
+    ul.product-list.d-flex.flex-wrap.justify-content-between.pl-2.w-100 
+        .col-lg-3
+            - for(var i = 0; i < 2; i++)
+                li.product-list__item.mb-4
+                    +product(products[i])
+        .col-lg-6
+            - for(var i = 2; i < 3; i++) 
+                li.product-list__item.mb-4 
+                    +product-large(products[i])
+        .col-lg-3
+            - for(var i = 3; i < 5; i++) 
+                li.product-list__item.mb-4 
+                    +product(products[i])
+            
 mixin category(productList)
     ul#pills-tab.nav.nav-pills.mb-3.font-weight-bold.justify-content-end.p-0(role='tablist')
         li.nav-item
@@ -44,37 +83,90 @@ mixin category(productList)
             a#pills-other-tab.nav-link(data-toggle='pill' href='#pills-other' role='tab' aria-controls='pills-other' aria-selected='false')
                 +button("Máy khác", "white")
     #pills-tabContent.tab-content
-        - var category1= []
-        - var category2= []
-        - var category3= []
-        - var category4= []
-        - var category5= []
-        each item, index in productList
-            case item.category
-                when 1
-                    - category1.push(item)
-                when 2
-                    - category2.push(item)
-                when 3
-                    - category3.push(item)
-                when 4
-                    - category4.push(item)
-                default
-                    - category5.push(item)
         #pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab') 
-            .row
-                +products(category1, 3)
+            .row.m-0
+                +products(categorydrill, 3)
         #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab') 
-            .row
-                +products(category2, 3)
+            .row.m-0
+                +products(category2D, 3)
 
         #pills-contact.tab-pane.fade(role='tabpanel' aria-labelledby='pills-contact-tab')
-            .row 
-                +products(category3, 3)
+            .row.m-0
+                +products(category3D, 3)
         #pills-tien.tab-pane.fade(role='tabpanel' aria-labelledby='pills-tien-tab')
-            .row 
-                +products(category4, 3)
+            .row.m-0
+                +products(categoryCNC, 3)
         #pills-other.tab-pane.fade(role='tabpanel' aria-labelledby='pills-other-tab')
-            .row 
-                +products(category5, 3)
+            .row.m-0
+                +products(categoryOther, 3)
+
+mixin categoryLarge(productList)
+    ul#pills-tab.nav.nav-pills.mb-3.font-weight-bold.justify-content-end.p-0(role='tablist')
+        li.nav-item
+            a#pills-home-tab-large.nav-link.active(data-toggle='pill' href='#pills-home-large' role='tab' aria-controls='pills-home-large' aria-selected='true')
+                +button("Máy khoan", "white")
+        li.nav-item
+            a#pills-profile-tab-large.nav-link(data-toggle='pill' href='#pills-profile-large' role='tab' aria-controls='pills-profile-large' aria-selected='false')
+                +button("Máy in 3S", "white")
+        li.nav-item
+            a#pills-contact-tab-large.nav-link(data-toggle='pill' href='#pills-contact-large' role='tab' aria-controls='pills-contact-large' aria-selected='false') 
+                +button("Máy CNC", "white")
+        li.nav-item
+            a#pills-tien-tab-large.nav-link(data-toggle='pill' href='#pills-tien-large' role='tab' aria-controls='pills-tien-large' aria-selected='false')  
+                +button("Máy tiện", "white")
+        li.nav-item
+            a#pills-other-tab-large.nav-link(data-toggle='pill' href='#pills-othe-larger' role='tab' aria-controls='pills-other-large' aria-selected='false')
+                +button("Máy khác", "white")
+    #pills-tabContent.tab-content
+        #pills-home-large.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab-large') 
+            .row.m-0
+                +productsLarge(categorydrill)
+        #pills-profile-large.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab-large') 
+            .row.m-0
+                +productsLarge(category2D)
+        #pills-contact-large.tab-pane.fade(role='tabpanel' aria-labelledby='pills-contact-tab-large')
+            .row.m-0
+                +productsLarge(category3D)
+        #pills-tien-large.tab-pane.fade(role='tabpanel' aria-labelledby='pills-tien-tab-large')
+            .row.m-0
+                +productsLarge(categoryCNC)
+        #pills-other-large.tab-pane.fade(role='tabpanel' aria-labelledby='pills-other-tab-large')
+            .row.m-0
+                +productsLarge(categoryOther)
+
+mixin productMedium(product)
+    .card.product.product-medium.w-100.d-flex.flex-row
+        .card-img.col-4.d-flex.align-items-center
+            img.card-img-top.w-100(src=product.image alt='Card image cap')
+        .product-body.col-8.text-left
+            h5.card-title=product.title
+            h5.card-price.mb-2=product.price
+                |  đ
+            .product-rates.mb-2
+                span 
+                    - for(var i = 0; i < product.rate; i++)
+                        i.fas.fa-star
+                    - for(var i = 0; i < 5 - product.rate; i++)
+                        i.far.fa-star.none-star
+                span.reviews  (#{product.reviews} Đánh giá)
+            .product-body__detail.text-truncate.mb-2(style='max-width: 100%;')=product.description
+            .action.d-flex.justify-content-start
+                a(href='#')
+                    +button("Mua ngay", "yellow") 
+                a(href='#') 
+                    +button("Mua ngay", "black")
+
+mixin productsMedium (products, size)
+    ul.product-list.product-medium-list.d-flex.flex-wrap.justify-content-between.pl-2.w-100
+        - for(var i = 0; i < size; i++) 
+            .col-lg-6.pr-0.product-col
+                li.product-list__item.mb-4
+                    +productMedium(products[i])
+
+mixin productsGrid(products, size)
+    ul.product-list.product-medium-list.d-flex.flex-wrap.justify-content-between.pl-2.w-100
+        - for(var i = 0; i < size; i++) 
+            .col-12.pr-0.product-col
+                li.product-list__item.mb-4
+                    +productMedium(products[i])                    
 

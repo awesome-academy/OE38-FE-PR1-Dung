@@ -3,40 +3,62 @@ prepend title
   - var title = "Trang chủ"
 
 block main
-    include ../components/banner
-    include ../components/button
-    include ../components/card
-    include ../components/product
-    include ../data/banner-data
-    include ../data/product-data
     main 
         .container.mt-4
             section.banner 
                 .row.m-0
-                    .col-lg-8.p-0
+                    .col-lg-8.p-0 
                         +banner(banner)
                     .col-lg-4.p-0.card-banner
                         each card in cards 
                             +card(card)
             section.products.mt-4
-                h2.categories-title.ml-0 Sản phẩm nổi bật
+                .d-flex.justify-content-between.mb-4
+                    h2.categories-title.ml-0 Sản phẩm nổi bật
+                    .button-next 
+                        +buttonSquare("black", "black")
+                        +buttonSquareRight("white", "black")
                 .row.m-0
                     .col-lg-3.col-12.p-0.mb-4
-                        include ../partials/vertical-nav
+                        +navbar(categories)
                     .col-lg-9.col-12.p-0
                         +products(products, 6)
             section.products.mt-4
                 h2.categories-title.ml-0 Sản phẩm mới
                 .categories-products
-                    +category(products, 3)
-            section.image-banner.mt-4
-                .row 
-                    .col-lg-6 
+                    +category(products)
+            section.image-banner.mt-4 
+                .row.m-0.justify-content-space
+                    .col-lg-6
                         .image
                             img.w-100.mb-2(src='../assets/images/banner1.jpg', alt="Anh banner")
-                    .col-lg-6 
+                    .col-lg-6
                         .image
                             img.w-100(src='../assets/images/banner2.jpg', alt="Anh banner")
-                
-
+            section.products.mt-4
+                h2.categories-title.ml-0 Sản phẩm mới
+                .categories-products
+                    +categoryLarge(products)
+            section.image-banner
+                .row.m-0 
+                    .col-lg-12.p-0
+                        .image
+                            img.w-100.mb-2(src='../assets/images/banner3.jpg', alt="Anh banner")
+            section.products.mt-4
+                .d-flex.justify-content-between.mb-4
+                    h2.categories-title.ml-0 Hàng mới về
+                    .button-next 
+                        +buttonSquare("black", "black")
+                        +buttonSquareRight("white", "black")
+                .categories-products-new
+                    +productsMedium(products, 4)
+    section.brands.mt-4
+        .container
+            +brand(brands, 5) 
+    section.sign-form
+        .sign-form-wrapper.text-center.container
+            h4.mb-3 Đăng ký để nhận tin tức khuyến mãi hàng tuần
+            .form
+                input.mr-2(type="text" placeholder="Nhập email của bạn...")
+                button.btn.btn-yellow Đăng ký
 

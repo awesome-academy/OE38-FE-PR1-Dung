@@ -114,3 +114,65 @@
         height: 18rem;
     }
 }
+
+.brands{
+    background-color: $gray;
+    position: relative;
+
+    .brand-image{
+        background-color: $gray;
+        height: 100% !important;
+        padding: 2rem 0;
+    }
+
+    .logo{
+        overflow: hidden;
+        
+        .brand-item{
+            padding: 0px 60px 0 30px
+        }
+    }
+    
+}
+
+.sign-form{
+    background: url("../assets/images/newsletter.png") center no-repeat;
+
+    .sign-form-wrapper{
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    h4{
+        @include text($white, none, 400, 1.5rem);
+    }
+
+    .form{
+        padding: 0 5rem;
+
+        input{
+            @include input(15px, 20px, none);
+            width: 80%;
+        }
+
+        button{
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+            padding: 15px 20px !important;
+        }
+    }
+    
+    @include responsive(breakpoints-large){
+        .form{
+            padding: 0 2em;
+            input, button{
+                margin-top: 1rem;
+                width: 100%;
+            }
+        }
+    }
+
+}

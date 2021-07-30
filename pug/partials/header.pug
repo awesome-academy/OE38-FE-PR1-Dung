@@ -47,7 +47,7 @@ header
                                                 span.sr-only (current)
                                     else 
                                         li.nav-item.dropdown
-                                            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')=item.name
+                                            a#navbarDropdown.nav-link.dropdown-toggle(href=item.href role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')=item.name
                                             .dropdown-menu(aria-labelledby='navbarDropdown')
                                                 each submenu in item.submenu
                                                     a.dropdown-item(href=submenu.href)=submenu.subname

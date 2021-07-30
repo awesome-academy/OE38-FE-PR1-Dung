@@ -1,0 +1,28 @@
+extend ../base/base
+prepend title
+  - var title = "Danh sách sản phẩm"
+
+block main
+  main 
+    .container.mt-4 
+      section.lists-products 
+        .row.m-0
+          .col-lg-3.col-12.p-0.mb-4
+            +navbar(categories, true, "Danh mục sản phẩm")
+          .col-lg-9.col-12.p-0
+            ul#pills-tab.nav.nav-pills.mb-3.font-weight-bold.justify-content-end.p-0(role='tablist')
+              li.nav-item
+                a#pills-home-tab.nav-link.active(data-toggle='pill' href='#pills-home' role='tab' aria-controls='pills-home' aria-selected='true')
+                  +buttonList("black", "white")
+              li.nav-item
+                a#pills-profile-tab.nav-link(data-toggle='pill' href='#pills-profile' role='tab' aria-controls='pills-profile' aria-selected='false')
+                  +buttonGrid("white", "white")
+            #pills-tabContent.tab-content
+              #pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab') 
+                .row.m-0
+                  +productsGrid(products, 9)
+              #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab') 
+                .row.m-0
+                  +products(products, 15)
+
+
