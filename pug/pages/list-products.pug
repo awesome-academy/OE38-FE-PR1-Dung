@@ -8,15 +8,35 @@ block main
       section.lists-products 
         .row.m-0
           .col-lg-3.col-12.p-0.mb-4
-            +navbar(categories, true, "Danh mục sản phẩm")
-          .col-lg-9.col-12.p-0
+            .filter-nav
+              +navbar(categories, true, "Danh mục sản phẩm", 1)
+            .filter-nav.mt-4
+              +navbar(filterPrice, true, "Tìm theo mức giá", 2)
+            .filter-nav.mt-4
+              +navbar(filterColor, true, "Tìm theo màu sắc", 3)
+            ul.promotion-nav.mt-4.pl-0
+              li.navbar-brand.nav-item.w-100(href='#')
+                a.nav-link.p-0.text-uppercase(href="#") Sản phẩm khuyến mãi
+              - for(var i = 4; i < 8; i++)
+                li 
+                  +productSmall(products[i])
+          .col-lg-9.col-12.p-0.lists-products-grid  
             ul#pills-tab.nav.nav-pills.mb-3.font-weight-bold.justify-content-end.p-0(role='tablist')
+              .d-flex.sort-and-show.ml-0
+                .sort.mr-2
+                  label(for="sort").mr-2 Sắp xếp theo 
+                  input(type="text" placeholder="Tên sản phẩm") 
+                .show.d-flex
+                  label(for="sort").mr-2 Show 
+                  select#sort(name="sort")
+                    option(value="18") 18 
+                    option(value="18") 24 
               li.nav-item
                 a#pills-home-tab.nav-link.active(data-toggle='pill' href='#pills-home' role='tab' aria-controls='pills-home' aria-selected='true')
-                  +buttonList("black", "white")
+                  +buttonList("white", "white")
               li.nav-item
                 a#pills-profile-tab.nav-link(data-toggle='pill' href='#pills-profile' role='tab' aria-controls='pills-profile' aria-selected='false')
-                  +buttonGrid("white", "white")
+                    +buttonGrid("white", "white")
             #pills-tabContent.tab-content
               #pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab') 
                 .row.m-0

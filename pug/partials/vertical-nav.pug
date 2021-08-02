@@ -5,8 +5,8 @@ mixin navbar(navData, type, title)
                 a.nav-link.p-0(href="#")=navData[0]
         - else
             li.navbar-brand.nav-item.w-100(href='#')
-                a.nav-link.p-0(href="#")=title
-        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
+                a.nav-link.p-0.text-uppercase(href="#")=title
+        button(class=`navbar-toggler navbar-toggler-${id}` type='button' data-toggle='collapse' data-target=`#navbarNavDropdown-${id}` aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
             i.fas.fa-chevron-down
         #navbarNavDropdown.collapse.navbar-collapse.w-100
             ul.navbar-nav.flex-column.w-100
@@ -14,4 +14,3 @@ mixin navbar(navData, type, title)
                         li(class=`nav-item ${index==0 ?"active" : ""}`)
                             a.nav-link.p-0(href="#")=navData[i]
             
-      

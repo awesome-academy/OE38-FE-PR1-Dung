@@ -13,6 +13,16 @@ mixin product(product)
                 a(href='#') 
                     +button("Mua ngay", "black")
 
+mixin productSmall(product)
+    .card.product.product-medium.w-100.d-flex.flex-row
+        .card-img.col-4.d-flex.align-items-center
+            img.card-img-top.w-100(src=product.image alt='Card image cap')
+        .product-body.col-8.text-left
+            h5.card-title=product.title
+            h5.card-price.mb-2=product.price
+                |  đ
+            .product-rates.mb-2
+
 mixin rating(product)
     .product-rates.mb-4
         span 
