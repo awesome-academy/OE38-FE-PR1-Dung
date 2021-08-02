@@ -1,0 +1,43 @@
+.blog {
+  .tags {
+    .nav-link{
+        color: $black !important;
+    }
+
+    button {
+      border: 1px solid $gray-dark;
+      margin-top: .5rem;
+    }
+  }
+
+  .pagination{
+      li{
+          margin-left: .5rem;
+          a{
+              @include text($gray-text, none, 400, .9rem);
+          }
+      }
+  }
+
+  @include responsive(breakpoints-large) {
+    .product-detail {
+      padding-left: 0 !important;
+    }
+  }
+
+  @include responsive(breakpoints-medium) {
+    .comment {
+      margin-left: 0 !important;
+    }
+  }
+
+  @include responsive(breakpoints-small) {
+    .author {
+      margin-left: 0 !important;
+    }
+
+    .comment {
+      margin-left: 1rem !important;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+.blog-detail{
+    .gallery{
+        .image-gallery{
+            padding: .5rem !important;
+        }
+    }
+
+    .galleries, .tags{
+        .navbar-brand{
+            .nav-link{
+                @include text($black, uppercase, 500, 1rem);
+            }
+        }
+    }
+
+    .blog-detail-article{
+        .news-content {
+            .news-title {
+              @include text($black, uppercase, 600, 1rem);
+            }
+        
+            .info {
+              .date {
+                @include text($gray-text, none, 400, 1rem);
+                font-style: italic;
+              }
+        
+              .author {
+                @include text($gray-text, none, 400, 1rem);
+                font-style: italic;
+        
+                span:last-child {
+                  color: $yellow;
+                }
+              }
+        
+              .comment {
+                @include text($gray-text, none, 400, 1rem);
+                font-style: italic;
+              }
+            }
+    
+            .content {
+                @include text($gray-text, none, 300, 0.9rem);
+            }
+    
+            .image-sub{
+                margin: 0 2rem;
+            }
+        }
+    }
+
+    .blog-footer{
+        .tags-footer{
+            b{
+                @include text($black, uppercase, 500, 1rem);
+            }
+
+            span{
+                @include text($gray-text, none, 400, .8rem);
+                line-height: 1.6rem
+            }
+        }
+
+        .social-footer{
+            a{
+                @include text($black, none, 400, .8rem);
+                border: 1px solid $gray-dark;
+                width: 2rem;
+                height: 2rem;
+                text-align: center;
+                line-height: 2rem;
+                margin-left: .5rem;
+
+                &:hover{
+                    @include hover($yellow, $white, none);
+                }
+            }
+        }
+    }
+
+    .comment-view{
+        .image{
+            border: 1px solid $gray-dark;
+            padding: .5rem;
+            max-width: 80px;
+            max-height: 80px
+        }
+
+        .date{
+            @include text($gray-text, none, 400, .9rem);
+            font-style: italic;
+
+            a{
+                color: $yellow;
+            }
+        }
+
+        .content{
+            @include text($gray-text, none, 400, .8rem);
+            font-style: italic;
+        }
+    }
+
+    .comment-write{
+        input, textarea{
+            border: 1px solid $gray-dark;
+            outline: none;
+            padding: 1rem;
+        }
+
+        .input-comment{
+            width: calc((100% - 2rem) /2);
+        }
+
+        @include responsive(breakpoints-large){
+            input{
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    @include responsive(breakpoints-large){
+        .galleries{
+            display: none;
+        }
+
+        .product-detail{
+            padding-left: 0 !important;
+        }
+    }
+
+    @include responsive(breakpoints-small){
+        .comment-view{
+            .image{
+                border: 1px solid $gray-dark;
+                padding: .5rem;
+                max-width: 60px;
+                max-height: 60px
+            }
+        }
+    }
+}

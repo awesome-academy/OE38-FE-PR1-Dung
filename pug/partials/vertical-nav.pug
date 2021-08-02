@@ -1,14 +1,14 @@
-mixin navbar(navData, type, title)
+mixin navbar(navData, type, title, id)
     nav.navbar.navbar-expand-lg.navbar-light.flex-column.p-0.align-items-start.vertical-nav
         - if(!type)
             li.navbar-brand.nav-item.w-100(href='#')
                 a.nav-link.p-0(href="#")=navData[0]
         - else
-            li.navbar-brand.nav-item.w-100(href='#')
+            li.navbar-brand.nav-item.w-100(href='#') 
                 a.nav-link.p-0.text-uppercase(href="#")=title
         button(class=`navbar-toggler navbar-toggler-${id}` type='button' data-toggle='collapse' data-target=`#navbarNavDropdown-${id}` aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
             i.fas.fa-chevron-down
-        #navbarNavDropdown.collapse.navbar-collapse.w-100
+        div(id=`navbarNavDropdown-${id}`).collapse.navbar-collapse.w-100
             ul.navbar-nav.flex-column.w-100
                 - for(var i = 1; i < navData.length; i++) 
                         li(class=`nav-item ${index==0 ?"active" : ""}`)

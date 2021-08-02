@@ -1,0 +1,47 @@
+.blog-news {
+  .news-content {
+    .news-title {
+      @include text($black, uppercase, 600, 1rem);
+    }
+
+    .info {
+      .date {
+        @include text($gray-text, none, 400, 1rem);
+        font-style: italic;
+      }
+
+      .author {
+        @include text($gray-text, none, 400, 1rem);
+        font-style: italic;
+
+        span:last-child {
+          color: $yellow;
+        }
+      }
+
+      .comment {
+        @include text($gray-text, none, 400, 1rem);
+        font-style: italic;
+      }
+    }
+
+    .content {
+      @include text($gray-text, none, 300, 0.7rem);
+      display: block;
+      display: -webkit-box;
+      font-size: 16px;
+      line-height: 1.2;
+      -webkit-line-clamp: 4;
+      min-height: calc(0.7rem*1.2*4); // font-size*line-height*line-clamp
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .more{
+      a {
+        @include text($yellow, none, 400, 0.9rem);
+      }
+    }
+  }
+}
