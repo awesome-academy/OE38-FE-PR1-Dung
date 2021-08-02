@@ -5,7 +5,7 @@
 
 .btn-yellow{
     @include button($yellow, $white);
-    @include text($white, uppercase, 500, .9rem);
+    @include text($white, uppercase, 500, .8rem);
     padding: .5rem 1rem;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -20,7 +20,7 @@
 
 .btn-black{
     @include button($black, $white);
-    @include text($white, uppercase, 500, .9rem);
+    @include text($white, uppercase, 500, .8rem);
     padding: .5rem 1rem;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -35,7 +35,7 @@
 
 .btn-white{
     @include button($white, $black);
-    @include text($black, uppercase, 500, .9rem);
+    @include text($black, uppercase, 500, .8rem);
     padding: .5rem 1rem;
     border-radius: 0;
     -webkit-border-radius: 0;
