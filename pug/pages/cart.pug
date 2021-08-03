@@ -1,0 +1,51 @@
+extend ../base/base
+prepend title 
+    - var title = "Giỏ hàng"
+
+block main
+    main 
+        .container.mt-4 
+            +breakcrumb("Trang chủ", "Giỏ hàng")
+            section.cart 
+                .table-responsive-xl
+                    table.table.table-bordered.table-cart
+                        thead
+                            tr.text-center.text-uppercase
+                                th(scope='col') STT
+                                th(scope='col') Sản phẩm
+                                th(scope='col') Thông tin
+                                th(scope='col') Đơn giá
+                                th(scope='col') Số lượng
+                                th(scope='col') Thành tiền 
+                                th(scope='col') Xóa
+                        tbody
+                            each cart, index in cartList
+                                tr.text-center.text-uppercase.cart-item
+                                    th(scope='row').align-middle=index+1
+                                    td.align-middle
+                                        img(src=cart.image, alt="Anh san pham")
+                                    td.align-middle=cart.name
+                                    td.align-middle=`${cart.price} Đ`
+                                    td.align-middle   
+                                        input(type="text" value=cart.quantity).quantity.align-middle 
+                                    td.align-middle=cart.total
+                                    td.align-middle.action
+                                        i.fas.fa-times
+            section.checkout.mt-4.row.justify-content-end
+                .col-lg-6
+                    table.table.table-bordered.table-checkout
+                        tbody
+                            tr.text-center.text-uppercase.cart-item
+                                th.align-middle Tổng tiền
+                                td.align-middle 6850000 Đ
+                            tr.text-center.text-uppercase.cart-item
+                                th(scope='row') Thuế (VAT)
+                                td 60000 Đ
+                            tr.text-center.text-uppercase.cart-item
+                                th(scope='row') Thanh toán
+                                td 60000 Đ
+                    .d-flex.justify-content-end.checkout-action.mtt-4
+                        .continue
+                            +button("Tiếp tục mua hàng", "black")
+                        .checkout-btn.ml-2
+                            +button("Thanh toán", "yellow")

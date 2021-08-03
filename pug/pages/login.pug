@@ -5,11 +5,7 @@ prepend title
 block main
     main
         .container.mt-4.login.mb-5
-            nav.breadcrumb-wrapper
-                ol.breadcrumb.pl-0
-                    li.breadcrumb-item
-                        a(href='/') Trang chủ
-                    li.breadcrumb-item.active Đăng nhập
+            +breakcrumb("Trang chủ", "Đăng nhập")
             .row.mt-4
                 .col-lg-6.name
                     h5.text-uppercase.mb-4 Thông tin cá nhân
