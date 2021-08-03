@@ -25,14 +25,6 @@ li{
 
       .active{
           color: $black;
-
-          &:before{
-              display: inline-block;
-              padding-right: .5rem;
-              padding-left: .5rem;
-              color: $gray-text;
-              content: ">";
-          }
       }
   }
 }
