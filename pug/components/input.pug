@@ -1,0 +1,8 @@
+mixin select(name, select, option1, option2)
+    .sort
+        .label 
+            label(for="sort").mr-2=name
+        select#sort(name="sort")
+            option(value="")=select
+            option(value="Yellow")=option1
+            option(value="Yellow")=option12

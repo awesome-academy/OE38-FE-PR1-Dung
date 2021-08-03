@@ -1,0 +1,113 @@
+.details-page {
+  .product-detail {
+    .product-image {
+      .product-image__large {
+        border: 1px solid $gray-dark;
+      }
+
+      .product-image__small > img {
+        width: calc((100%-100px) / 5);
+        border: 1px solid $gray-dark;
+      }
+    }
+
+    .product-info {
+      .rating-comment {
+        .product-rates {
+          span {
+            @include text($yellow, none, none, 1rem);
+          }
+
+          .reviews {
+            color: $gray-text;
+            font-style: italic;
+          }
+        }
+
+        a {
+          @include text($black, none, none, 1rem);
+        }
+      }
+
+      .card-title {
+        @include text($red, uppercase, 600, 1.5rem);
+      }
+
+      .product-body__detail {
+        @include text($gray-text, none, 400, 0.6rem);
+        line-height: 0.8rem;
+      }
+
+      .sort {
+        label {
+          @include text($gray-text, none, 400, 0.9rem);
+        }
+
+        select {
+          @include text($gray-text, none, 400, 0.9rem);
+          padding: 0.5rem 1rem;
+        }
+      }
+
+      .number {
+        .input-btn {
+          position: relative;
+
+          input {
+            width: 6rem;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            border: 1px solid $gray-dark;
+          }
+
+          .control-btn i:first-child {
+            cursor: pointer;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+          }
+
+          .control-btn i:last-child {
+            cursor: pointer;
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .detail-tabs {
+    .nav.nav-pills {
+      .nav-item {
+        .nav-link {
+          @include text($black, uppercase, 500, 0.9rem);
+          border: 1px solid $gray-dark;
+          border-radius: 0;
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
+          -ms-border-radius: 0;
+          -o-border-radius: 0;
+        }
+
+        .active {
+          @include text($yellow, uppercase, 500, 0.9rem);
+          background-color: $black;
+        }
+      }
+    }
+
+    .tab-content {
+      @include text($gray-text, none, 400, 0.7rem);
+      border: 1px solid $gray-dark;
+      padding: 2rem 1rem;
+    }
+  }
+  
+  @include responsive(breakpoints-large) {
+    .promotion-nav {
+      display: none !important;
+    }
+  }
+}

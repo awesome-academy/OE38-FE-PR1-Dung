@@ -7,11 +7,11 @@ mixin product(product)
                 |  đ
             h5.card-title=product.title
             +rating(product)
-            .action.d-flex.justify-content-center
+            .action.d-flex.justify-content-center.w-100
                 a(href='#')
                     +button("Mua ngay", "yellow")
-                a(href='#') 
-                    +button("Mua ngay", "black")
+                a(href='/detail.html')
+                    +button("Xem chi tiết", "black")
 
 mixin productSmall(product)
     .card.product.product-medium.w-100.d-flex.flex-row
@@ -159,7 +159,7 @@ mixin productMedium(product)
                     - for(var i = 0; i < 5 - product.rate; i++)
                         i.far.fa-star.none-star
                 span.reviews  (#{product.reviews} Đánh giá)
-            .product-body__detail.text-truncate.mb-2(style='max-width: 100%;')=product.description
+            .product-body__detail.text-truncate.mb-2=product.description
             .action.d-flex.justify-content-start
                 a(href='#')
                     +button("Mua ngay", "yellow") 
@@ -179,4 +179,5 @@ mixin productsGrid(products, size)
             .col-12.pr-0.product-col
                 li.product-list__item.mb-4
                     +productMedium(products[i])                    
+
 
