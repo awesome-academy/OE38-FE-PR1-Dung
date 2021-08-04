@@ -1,0 +1,21 @@
+.error{
+    margin-top: 50px;
+
+    .error-text{
+        margin-top: 2rem;
+
+        .error-warning{
+            @include text($yellow, uppercase, 900, 4rem);
+        }
+
+        p{
+            @include text($black, none, 400, 1rem);
+        }
+
+        @include responsive(breakpoints-large){
+            .error-warning{
+                font-size: 2rem;
+            }
+        }
+    }
+}

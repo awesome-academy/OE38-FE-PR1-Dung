@@ -1,0 +1,51 @@
+extend ../base/base
+prepend title 
+    - var title = "Đăng ký"
+
+block main
+    main
+        .container.mt-4.login
+            nav.breadcrumb-wrapper
+                ol.breadcrumb.pl-0
+                    li.breadcrumb-item
+                        a(href='/') Trang chủ
+                    li.breadcrumb-item.active Đăng ký
+            h5.text-uppercase Thông tin cá nhân
+            .row.mt-4
+                .col-lg-6.name
+                    +input("Họ và tên: ", true)
+                .col-lg-6.email
+                    +input("Email: ", true)
+            .row.mt-4
+                .col-lg-6.phone
+                    +input("Số điện thoại: ", true)
+                .col-lg-6.address
+                    +input("Địa chỉ: ", true)
+            +checkbox("Nhận thông báo qua email")
+            h5.mt-4.text-uppercase Thông tin đăng nhập
+            .row.mt-4
+                .col-lg-6.name
+                    +input("Họ và tên: ", true)
+                .col-lg-6.email
+                    +input("Email: ", true)
+            .action.d-flex.mt-4
+                .back
+                    +button("Quay lại", "black")
+                .signin.ml-2(data-target='#exampleModal')
+                    button.btn.btn-yellow(type='button' data-toggle='modal' data-target='#exampleModal') Đăng ký
+                    #exampleModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                        .modal-dialog(role='document')
+                            .modal-content
+                                .modal-header
+                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                        span(aria-hidden='true') &times;
+                                .modal-body.text-center
+                                    p.modal-title.text-uppercase.font-weight-bold Đăng ký nhận tin tức của chúng tôi 
+                                    p.mt-4 Bạn muốn nhanh chóng nhận các tin tức khuyến mãi và ưu đãi lớn của chúng tôi hàng tuần  
+                                    p Hãy đăng ký theo form dưới đây
+                                    input.mt-4.w-100(type="text" placeholder="Nhập email của bạn vào đây")
+                                    .sign-modal.mt-4.mb-4
+                                        +button("Đăng ký", "yellow")
+                                    .checkbox
+                                        input.mt-4(type="checkbox") 
+                                        label.mt-4 Không hiển thị thông báo này
