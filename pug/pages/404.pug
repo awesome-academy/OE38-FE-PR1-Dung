@@ -1,0 +1,16 @@
+extend ../base/base
+prepend title 
+    - var title = "404"
+
+block main
+    main
+        .container.error
+            .d-flex.justify-content-center.flex-wrap-reverse
+                .error-text.text-center
+                    h1.text-uppercase.error-warning 404 Error 
+                    p Chúng tôi không tìm thấy kết quả nào phù hợp với tiềm kiếm của bạn 
+                    p Xin vui lòng trở lại trang chủ 
+                    a(href="/") 
+                        +button("Trang chủ", "black")
+                .image-error
+                    img.w-100(src="../assets/images/Layer_18.png", alt="Error image")

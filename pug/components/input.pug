@@ -5,5 +5,19 @@ mixin select(name, select, option1, option2)
         select#sort(name="sort")
             option(value="")=select
             option(value="Yellow")=option1
-            option(value="Yellow")=option12
+            option(value="Yellow")=option2
 
+mixin input(label, require)
+    .input
+        .label 
+            - if(require)
+                label=label
+                span.require *
+            - else  
+                label=label
+        input(type="text").w-100
+
+mixin checkbox(label)
+    .checkbox
+        input.mt-4(type="checkbox") 
+        label.mt-4=label

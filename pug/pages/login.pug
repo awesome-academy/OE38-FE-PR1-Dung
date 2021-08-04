@@ -1,0 +1,28 @@
+extend ../base/base
+prepend title 
+    - var title = "Đăng nhập "
+
+block main
+    main
+        .container.mt-4.login.mb-5
+            nav.breadcrumb-wrapper
+                ol.breadcrumb.pl-0
+                    li.breadcrumb-item
+                        a(href='/') Trang chủ
+                    li.breadcrumb-item.active Đăng nhập
+            .row.mt-4
+                .col-lg-6.name
+                    h5.text-uppercase.mb-4 Thông tin cá nhân
+                    .name
+                        +input("Họ và tên: ", true)
+                    .email.mt-4
+                        +input("Email: ", true)
+                    .d-flex.justify-content-between.mt-4
+                        +checkbox("Ghi nhớ mật khẩu")
+                        a.mt-4.forget(href="#") Bạn quên mật khẩu?
+                    .action.mt-4
+                        +button("Quay lại", "black")
+                .col-lg-6.email
+                    h5.text-uppercase.mb-4 Bạn chưa có tài khoản? 
+                    p.text Đăng ký tài khoản để mua hàng nhanh hơn. Theo giõi đơn đặt hàng, vận chuyển. Cập nhật các tin tức sự kiện và cấc chương trình giảm giá của chúng tôi
+                    +button("Đăng ký", "yellow")

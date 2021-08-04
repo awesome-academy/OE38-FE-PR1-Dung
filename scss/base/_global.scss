@@ -14,3 +14,25 @@ a {
 li{
   list-style: none;
 }
+
+.breadcrumb-wrapper{
+  .breadcrumb{
+      background-color: transparent;
+
+      a{
+          color: $gray-text;
+      }
+
+      .active{
+          color: $black;
+
+          &:before{
+              display: inline-block;
+              padding-right: .5rem;
+              padding-left: .5rem;
+              color: $gray-text;
+              content: ">";
+          }
+      }
+  }
+}
