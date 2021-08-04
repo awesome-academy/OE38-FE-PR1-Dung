@@ -1,0 +1,42 @@
+extend ../base/base
+prepend title 
+    - var title = "Blog"
+
+block main
+    main 
+        .container.mt-4 
+            section.lists-products.details-page.blog
+                .row.m-0
+                    .col-lg-3.col-12.p-0.mb-4
+                        .filter-nav
+                            +navbar(categories, true, "Danh mục sản phẩm", 1)
+                        .filter-nav.mt-4
+                            +navbar(categoriesNews, true, "Danh mục tin tức", 2)
+                        .filter-nav.mt-4.tags
+                            li.navbar-brand.nav-item.w-100(href='#')
+                                a.nav-link.p-0.text-uppercase(href="#") Thẻ tag
+                            +button("thời trang", "black")
+                            +button("máy khoan", "white")
+                            +button("news", "white")
+                            +button("công nghiệp", "white")
+                            +button("xây dựng", "white")
+                            +button("phay", "white")
+                            +button("máy cắt", "white")
+                            +button("hóa chất", "white")
+                    .col-lg-9.col-12.p-0.product-detail.pl-4
+                        ul.p-0
+                            each news in newsList
+                                li
+                                    +newsBlog(news)
+                        nav(aria-label='Page navigation example').mt-5
+                            ul.pagination.justify-content-end
+                                li.page-item
+                                    a.page-link(href='#') Trang trước
+                                li.page-item
+                                    a.page-link(href='#') 1
+                                li.page-item
+                                    a.page-link(href='#') 2
+                                li.page-item
+                                    a.page-link(href='#') 3
+                                li.page-item
+                                    a.page-link(href='#') Trang cuối

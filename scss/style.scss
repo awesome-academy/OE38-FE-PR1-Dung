@@ -14,8 +14,12 @@
 @import "./components/card.scss";
 @import "./components/vertical-nav.scss";
 @import "./components/product.scss";
+@import "./components/news";
+
 
 //import pages
 @import "./pages/index.scss";
 @import "./pages/list-products.scss";
 @import "./pages/detail.scss";
+@import "./pages/blog";
+@import "./pages/blog-detail";

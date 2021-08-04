@@ -1,0 +1,19 @@
+mixin newsBlog(news)
+    article.blog-news
+        .news-image 
+            img.w-100(src=news.image, alt="Image news")
+        .news-content.mt-3
+            .news-title=news.title 
+            .info.d-flex.mt-3.flex-wrap
+                .date=news.date 
+                .author.ml-4
+                    i.fas.fa-user.mr-2
+                    | Đăng bởi 
+                    span.ml-1=` ${news.author}`
+                .comment.ml-4
+                    i.fas.fa-comments 
+                    span.ml-2=`${news.comments.length} Bình luận`
+            .content.mt-3=news.content 
+            span.more
+                a(href=news.link) [Đọc tiếp]
+        hr

@@ -1,0 +1,23 @@
+mixin comment(comment, replay)
+    .d-flex.mt-4.mb-4
+        - if(replay==true)
+            .col-2.image
+                img.w-100(src=comment.image, alt="Avatar")
+            .col-10.mt-2
+                span.text-uppercase.font-weight-bold=comment.user
+                .date.mt-2.d-flex.justify-content-between.flex-wrap
+                    span=comment.date
+                    span
+                        a(href="#") Trả lời 
+                p.content.mt-2=comment.content
+        - else 
+            .col-2 
+            .col-2.image
+                img.w-100(src=comment.image, alt="Avatar")
+            .col-8.mt-2
+                span.text-uppercase.font-weight-bold=comment.user
+                .date.mt-2.d-flex.justify-content-between.flex-wrap
+                    span=comment.date
+                    span
+                        a(href="#") Trả lời
+                p.content.mt-2=comment.content
