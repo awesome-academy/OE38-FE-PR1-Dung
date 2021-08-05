@@ -1,49 +1,63 @@
 @import "../base/mixin";
 @import "../base/variable";
+
 header {
   width: 100%;
+
   .header-top-wrapper {
     background-color: $gray;
+
     .header-top {
       .social {
         .social__item {
           width: 50px;
           height: 50px;
           border-left: 1px solid $gray-dark;
+
           &:last-child {
             border-right: 1px solid $gray-dark;
           }
+
           i {
             color: $black;
           }
+
           &:hover {
             @include hover($yellow, $white, 1rem);
+
             i {
               color: $white !important;
             }
           }
         }
+
         .active {
           @include hover($yellow, $white, 1rem);
+
           i {
             color: $white !important;
           }
         }
       }
+
       .login {
         &-list {
           .login__item {
             height: 50px;
             border-left: 1px solid $gray-dark;
             padding: 0 21px;
+
             &:last-child {
               border-right: 1px solid $gray-dark;
             }
+
             a {
               @include text($black, uppercase, 500, 1rem);
             }
+
             &:hover {
               @include hover($yellow, $white, 1rem);
+
               a {
                 color: $white;
               }
@@ -52,12 +66,15 @@ header {
         }
       }
     }
+
     @include responsive(breakpoints-small) {
       .social {
         display: none;
       }
+
       .login {
         width: 100%;
+
         .login-list {
           .login__item {
             height: 50px;
@@ -65,6 +82,7 @@ header {
             border-right: 1px solid $gray-dark;
             justify-content: center;
             width: 50%;
+
             &:last-child {
               border-right: none;
             }
@@ -78,9 +96,11 @@ header {
     padding: 10px 0;
     width: 100%;
     min-height: 120px;
+
     .contact {
       p {
         font-size: 0.8rem;
+
         &:first-child {
           @include text($yellow, uppercase, 700, 1rem);
           margin-bottom: 0;
@@ -88,12 +108,15 @@ header {
         }
       }
     }
+
     .search {
       position: relative;
+
       input {
         width: 100%;
         @include input(15px 25px, 25px, $gray-dark);
       }
+
       i {
         position: absolute;
         right: 2rem;
@@ -102,26 +125,32 @@ header {
         cursor: pointer;
       }
     }
+
     @include responsive(breakpoints-extra-large) {
       .hidden-item {
         display: none;
       }
+
       .logo,
       .search {
         margin-right: 0;
       }
     }
+
     @include responsive(breakpoints-small) {
       .header-logo {
         height: 240px;
       }
+
       .search {
         margin-top: 2rem;
         padding: 0 2rem;
+
         i {
           right: 4rem;
         }
       }
+
       .logo,
       .search {
         text-align: center;
@@ -132,65 +161,98 @@ header {
   .header-nav {
     min-height: 70px;
     background-color: $black;
+
     .navbar {
       padding: 0;
+
       ul {
         .nav-item {
           padding: 16px 10px;
           border-left: 1px solid $gray-border;
+
           &:last-child {
             border-right: 1px solid $gray-border;
           }
+
           .nav-link {
             @include text($white, uppercase, 900, 1rem);
           }
+
           &:hover {
             @include hover($yellow, $white, 1rem);
           }
         }
+
         .active {
           @include hover($yellow, $white, 1rem);
         }
       }
+
       .dropdown {
         &:hover .dropdown-menu {
           display: block;
         }
       }
+
       .navbar-toggler {
         padding: 22px 30px;
         outline: none;
         border-color: $gray-border;
       }
+
       .dropdown-toggle::after {
         display: none;
       }
     }
+
     .cart-icon {
       padding: 19px 30px;
       border-left: 1px solid $gray-border;
       border-right: 1px solid $gray-border;
       cursor: pointer;
+      position: relative;
+
       i {
         @include hover(transparent, $white, 2rem);
       }
+
       &:hover {
         @include hover($yellow, $white, 1rem);
       }
+
+      &::before {
+        @include before(25px, 25px, block);
+        @include text($white, uppercase, 600, 1rem);
+        text-align: center;
+        content: "1";
+        position: absolute;
+        top: 3px;
+        left: 50%;
+        background-color: $yellow;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
     }
+
     @include responsive(breakpoints-large) {
       .navbar {
         width: 100%;
       }
+
       .header-nav {
         position: relative;
       }
+
       .cart {
         position: absolute;
         right: 2.8rem;
       }
     }
   }
+
   @include responsive(breakpoints-small) {
     .container {
       width: 100%;
