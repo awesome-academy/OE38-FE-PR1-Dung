@@ -8,8 +8,19 @@
   }
 }
 
+.btn-hidden{
+  display: none;
+}
+
+@include responsive(breakpoints-large){
+  .btn-hidden{
+    display: block;
+  }
+}
+
 .categories-products {
   .nav-pills {
+    margin-top: -4rem;
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -17,12 +28,17 @@
     -o-border-radius: 0;
 
     .nav-link {
-      border: 0.5px solid $black;
       outline: none;
       padding: 0;
+      border: none;
       background-color: transparent;
+
+      button {
+        border: 0.5px solid $black;
+      }
     }
-    .nav-item + .nav-item {
+
+    .nav-item+.nav-item {
       margin-left: 1rem;
     }
 
@@ -46,7 +62,7 @@
     }
   }
 
-  @include responsive(breakpoints-medium) {
+  @include responsive(breakpoints-large) {
     .nav-pills {
       display: none;
     }

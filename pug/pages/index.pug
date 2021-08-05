@@ -24,7 +24,11 @@ block main
                     .col-lg-9.col-12.p-0
                         +products(products, 6)
             section.products.mt-4
-                h2.categories-title.ml-0 Sản phẩm mới
+                .d-flex.justify-content-between.mb-4
+                    h2.categories-title.ml-0 Sản phẩm bán chạy
+                    .button-next.btn-hidden
+                        +buttonSquare("black", "black")
+                        +buttonSquareRight("white", "black")
                 .categories-products
                     +category(products)
             section.image-banner.mt-4 
@@ -36,7 +40,11 @@ block main
                         .image
                             img.w-100(src='../assets/images/banner2.jpg', alt="Anh banner")
             section.products.mt-4
-                h2.categories-title.ml-0 Sản phẩm mới
+                .d-flex.justify-content-between.mb-4
+                    h2.categories-title.ml-0 Sản phẩm mới
+                    .button-next.btn-hidden
+                        +buttonSquare("black", "black")
+                        +buttonSquareRight("white", "black")
                 .categories-products
                     +categoryLarge(products)
             section.image-banner
