@@ -7,7 +7,7 @@ mixin banner(banner)
             each item, index in banner
                 div(class=`carousel-item ${index == 0 ? "active" : ""}`)
                     .banner-detail
-                        h1=item.name
+                        h1.name=item.name
                         h1.title=item.title
                         ul.list-detail.mb-4
                             each i in item.detail

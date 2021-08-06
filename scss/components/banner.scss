@@ -25,6 +25,9 @@
 
                 .list-detail {
                     padding-left: 0 !important;
+                    animation-name: moveleft;
+                    animation-duration: 2s;
+                    animation-timing-function: ease-in-out;
 
                     &__item {
                         i {
@@ -34,6 +37,121 @@
                         span {
                             @include text($black, none, 300, 1.2rem);
                         }
+                    }
+                }
+
+                .name {
+                    animation-name: moveInRight;
+                    animation-duration: 2s;
+                    animation-timing-function: ease-in-out;
+                }
+
+                .title {
+                    animation-name: moveInleft;
+                    animation-duration: 2s;
+                    animation-timing-function: ease-in-out;
+                }
+
+                button {
+                    animation-name: movebottom;
+                    animation-duration: 2s;
+                    animation-timing-function: ease-in-out;
+                }
+
+                @keyframes movebottom {
+                    from {
+                        opacity: 0;
+                        transform: translateY(100px);
+                        -webkit-transform: translateY(100px);
+                        -moz-transform: translateY(100px);
+                        -ms-transform: translateY(100px);
+                        -o-transform: translateY(100px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translate(0);
+                        -webkit-transform: translate(0);
+                        -moz-transform: translate(0);
+                        -ms-transform: translate(0);
+                        -o-transform: translate(0);
+                    }
+                }
+
+                @keyframes moveleft {
+                    from {
+                        opacity: 0;
+                        transform: translateX(-100px);
+                        -webkit-transform: translateX(-100px);
+                        -moz-transform: translateX(-100px);
+                        -ms-transform: translateX(-100px);
+                        -o-transform: translateX(-100px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translate(0);
+                        -webkit-transform: translate(0);
+                        -moz-transform: translate(0);
+                        -ms-transform: translate(0);
+                        -o-transform: translate(0);
+                    }
+                }
+
+                @keyframes moveInleft {
+                    0% {
+                        opacity: 0;
+                        transform: translateX(-100px);
+                        -webkit-transform: translateX(-100px);
+                        -moz-transform: translateX(-100px);
+                        -ms-transform: translateX(-100px);
+                        -o-transform: translateX(-100px);
+                    }
+
+                    80% {
+                        transform: translateX(10px);
+                        -webkit-transform: translateX(10px);
+                        -moz-transform: translateX(10px);
+                        -ms-transform: translateX(10px);
+                        -o-transform: translateX(10px);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translate(0);
+                        -webkit-transform: translate(0);
+                        -moz-transform: translate(0);
+                        -ms-transform: translate(0);
+                        -o-transform: translate(0);
+                    }
+                }
+
+                @keyframes moveInRight {
+                    0% {
+                        opacity: 0;
+                        transform: translateX(100px);
+                        -webkit-transform: translateX(100px);
+                        -moz-transform: translateX(100px);
+                        -ms-transform: translateX(100px);
+                        -o-transform: translateX(100px);
+                    }
+
+                    80% {
+                        opacity: 0.5;
+                        transform: translateX(-10px);
+                        -webkit-transform: translateX(-10px);
+                        -moz-transform: translateX(-10px);
+                        -ms-transform: translateX(-10px);
+                        -o-transform: translateX(-10px);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translate(0);
+                        -webkit-transform: translate(0);
+                        -moz-transform: translate(0);
+                        -ms-transform: translate(0);
+                        -o-transform: translate(0);
                     }
                 }
             }
@@ -115,47 +233,47 @@
     }
 }
 
-.brands{
+.brands {
     background-color: $gray;
     position: relative;
 
-    .brand-image{
+    .brand-image {
         background-color: $gray;
         height: 100% !important;
         padding: 2rem 0;
     }
 
-    .logo{
+    .logo {
         overflow: hidden;
-        
-        .brand-item{
+
+        .brand-item {
             padding: 0px 60px 0 30px
         }
     }
-    
+
 }
 
-.sign-form{
+.sign-form {
     background: url("../assets/images/newsletter.png") center no-repeat;
 
-    .sign-form-wrapper{
+    .sign-form-wrapper {
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
 
-    h4{
+    h4 {
         @include text($white, none, 400, 1.5rem);
     }
 
-    .form{
+    .form {
         padding: 0 5rem;
 
-        input{
+        input {
             @include input(15px, 20px, none);
             width: 80%;
         }
 
-        button{
+        button {
             border-radius: 20px;
             -webkit-border-radius: 20px;
             -moz-border-radius: 20px;
@@ -164,11 +282,13 @@
             padding: 15px 20px !important;
         }
     }
-    
-    @include responsive(breakpoints-large){
-        .form{
+
+    @include responsive(breakpoints-large) {
+        .form {
             padding: 0 2em;
-            input, button{
+
+            input,
+            button {
                 margin-top: 1rem;
                 width: 100%;
             }
