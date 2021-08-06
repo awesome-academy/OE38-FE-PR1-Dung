@@ -1,11 +1,13 @@
 extend ../base/base
+block variables
+    - const current = "/"
 prepend title 
     - var title = "Giỏ hàng"
 
 block main
-    main 
+    main
         .container.mt-4 
-            +breakcrumb("Trang chủ", "Giỏ hàng")
+            +breakcrumb(["Trang chủ"], "Giỏ hàng")
             section.cart 
                 .table-responsive-xl
                     table.table.table-bordered.table-cart

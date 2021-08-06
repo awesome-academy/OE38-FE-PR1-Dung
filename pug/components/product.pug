@@ -51,7 +51,7 @@ mixin product-large(product)
                 a(href='#')
                     +button("Mua ngay", "yellow")
                 a(href='#') 
-                    +button("Mua ngay", "black")
+                    +button("Xem chi tiết", "black") 
 
 mixin products (products, size)
     ul.product-list.d-flex.flex-wrap.justify-content-between.pl-2.w-100
@@ -163,8 +163,8 @@ mixin productMedium(product)
             .action.d-flex.justify-content-start
                 a(href='#')
                     +button("Mua ngay", "yellow") 
-                a(href='#') 
-                    +button("Mua ngay", "black")
+                a(href='/detail.html') 
+                    +button("Xem chi tiết", "black")
 
 mixin productsMedium (products, size)
     ul.product-list.product-medium-list.d-flex.flex-wrap.justify-content-between.pl-2.w-100

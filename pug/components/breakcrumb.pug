@@ -1,6 +1,8 @@
-mixin breakcrumb(item1, item2)
+mixin breakcrumb(items, last)
     nav.breadcrumb-wrapper
         ol.breadcrumb.pl-0
-            li.breadcrumb-item
-                a(href='/')=item1
-            li.breadcrumb-item.active=item2
+            each item in items
+                li.breadcrumb-item
+                    a(href='#')=item
+            if last
+                li.breadcrumb-item.active=last

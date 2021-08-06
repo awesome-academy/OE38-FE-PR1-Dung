@@ -39,14 +39,14 @@ header
                         button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                             span.navbar-toggler-icon
                         #navbarSupportedContent.collapse.navbar-collapse.font-weight-bold
-                            ul.navbar-nav
+                            ul.navbar-nav 
                                 each item,index in menu 
                                     if(!item.submenu)
-                                        li(class=`nav-item ${index==0 ?"active" : ""}`)
+                                        li(class=`nav-item ${current==item.href ? "active" : ""}`)
                                             a.nav-link(href=item.href)=item.name 
                                                 span.sr-only (current)
                                     else 
-                                        li.nav-item.dropdown
+                                        li.nav-item.dropdown(class =`${current==item.href ? "active" : ""}`)
                                             a#navbarDropdown.nav-link.dropdown-toggle(href=item.href role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')=item.name
                                             .dropdown-menu(aria-labelledby='navbarDropdown')
                                                 each submenu in item.submenu

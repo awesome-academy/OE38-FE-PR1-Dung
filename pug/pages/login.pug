@@ -1,11 +1,13 @@
 extend ../base/base
+block variables
+    - const current = "/"
 prepend title 
     - var title = "Đăng nhập "
 
 block main
     main
         .container.mt-4.login.mb-5
-            +breakcrumb("Trang chủ", "Đăng nhập")
+            +breakcrumb(["Trang chủ"], "Đăng nhập")
             .row.mt-4
                 .col-lg-6.name
                     h5.text-uppercase.mb-4 Thông tin cá nhân

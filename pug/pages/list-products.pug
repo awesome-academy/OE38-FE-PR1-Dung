@@ -1,11 +1,13 @@
 extend ../base/base
+block variables
+    - const current = "/list-products.html"
 prepend title
   - var title = "Danh sách sản phẩm"
 
 block main
   main 
     .container.mt-4 
-      +breakcrumb("Trang chủ", "Danh mục sản phẩm")
+      +breakcrumb(["Trang chủ"], "Danh mục sản phẩm")
       section.lists-products 
         .row.m-0
           .col-lg-3.col-12.p-0.mb-4
